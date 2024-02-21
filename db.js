@@ -2,9 +2,9 @@ const { Sequelize } = require('sequelize')
 
 // database
 const sequelize = new Sequelize(
-  '', // Database name
-  '', // User
-  '', // Password
+  DB_NAME, // Database name
+  DB_USER, // User
+  DB_PASSWORD, // Password
   {
     host: '', // Host
     dialect: 'postgres',
