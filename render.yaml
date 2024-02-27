@@ -1,9 +1,19 @@
-databases:
-  - name: test
-    databaseName: test
-  - key: DB_PASSWORD
-    generateValue: true
-  - key: HOST_NAME
-    generateValue: true
-  - key: DB_USER
-    generateValue: true
+services:
+  - type: web
+    name: cloud_first_blueprint
+    runtime: node
+    region: frankfurt
+    plan: free
+    branch: main
+    buildCommand: npm install
+    runCommand: npm run start
+    env:
+      - key: DB_CONNECTION_STRING
+        fromDatabase:
+          name: cloud_first_blueprint_db
+          property: connectionString
+
+database:
+    name: cloud_first_blueprint_db
+    region: frankfurt
+    plan: free
