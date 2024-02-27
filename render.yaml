@@ -1,0 +1,9 @@
+databases:
+  - name: test
+    databaseName: test
+  - key: DB_PASSWORD
+    generateValue: true
+  - key: HOST_NAME
+    generateValue: true
+  - key: DB_USER
+    generateValue: true
