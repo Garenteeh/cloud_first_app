@@ -6,7 +6,7 @@ services:
     plan: free
     branch: main
     buildCommand: npm install
-    runCommand: npm start
+    startCommand: npm start
     envVars:
       - key: DB_CONNECTION_STRING
         fromDatabase:
@@ -14,6 +14,6 @@ services:
           property: connectionString
 
 databases:
-    name: cloud_first_blueprint_db
-    region: frankfurt
-    plan: free
+    - name: cloud_first_blueprint_db
+      region: frankfurt
+      plan: free
